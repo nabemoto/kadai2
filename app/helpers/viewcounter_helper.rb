@@ -1,0 +1,2 @@
+module ViewcounterHelper
+end

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>練習</title>
+</head>
+<body>
+
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="jquery.xdomainajax.js"></script> <!-- for cross domain-->
+  <script>
+ $(function(){
+ //Passing data to rails controller, you can do it like this:
+ var webURL = {fullUrl: window.location.href
+              };//for getting complete url,or window.location.origin for domain alone.
+ $.ajax({
+  url: 'http://localhost:3000/viewcounter/count',
+  type: "GET",
+  data: webURL
+   })
+});
+</script>
+</body>
+</html>
+
+I am creating a PV counter app with rails, and to achieve that, I want to put a jQuery script in another site's HTML file to pass information about the site's url to my rails app. In the end, I want to save the url in DB once the site is visited.
+So far, I am trying to make jQuery script for sending data to rails, and I wrote this. How do I send the target site's url?
