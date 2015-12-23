@@ -1,0 +1,62 @@
+h1{
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.snippet{
+  font-style: italic;
+  margin: 30px auto;
+  font-size: 20px;
+  border-bottom: dotted;
+  display: inline-block;
+}
+
+.snippetstyle{
+  color: #1C15E6;
+}
+
+.pv_item{
+  margin-top: 40px;
+  font-size: 25px;
+  border-bottom: solid;
+  display: inline-block;
+}
+
+.each_pvs{
+  font-size: 17px;
+}
+
+.pv1{
+  margin-left: 40px;
+}
+
+.subtitle{
+  font-size: 30px;
+}
+
+.total_pv{
+  position: relative;
+  top: 10px;
+  left: 20px;
+  font-size: 25px;
+}
+
+.each_url{
+  margin-top: 30px;
+}
+
+.history{
+  font-size: 15px;
+  letter-spacing: 0.2em;
+}
+
+li{
+  margin: 15px auto;
+}
+
+

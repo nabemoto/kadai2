@@ -1,1 +1,82 @@
-heeeey
+<div class="container">
+  <div class="row">
+    <h1>PV COUNTER</h1>
+    <p class="snippet"><span class="snippetstyle">Paste this snippet into your website so that it appears before the closing &lt;/body&gt; tag and start tracking!</span></p>
+
+    <div class="well">
+    <PRE>
+      <code>
+&lt;script src="https://code.jquery.com/jquery-1.11.3.min.js"&gt;&lt;/script&gt;
+&lt;script src="jquery.xdomainajax.js"&gt;&lt;/script&gt; 
+&lt;script&gt;
+  $(function(){
+    var webURL = {fullURL: window.location.href,
+         domain: window.location.origin
+        };
+   $.ajax({
+    url: 'http://localhost:3000/viewcounter/counter', ここを変える！！！！！！！！！！！！！！
+    type: "GET",
+    dataType: 'json',
+    data: webURL,
+    success: function(data){
+        console.log('success' + data);
+        },
+        error: function(data){
+          console.log('error' + data);
+        }
+     })
+  });
+&lt;/script&gt;
+      </code>
+    </PRE>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <h2>PV Records</h2>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="pv1">
+      <h3 class="pv_item">TOTAL PV</h3>
+      <p class="total_pv"><%= @total_pv %>pv</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="pv1">
+      <h3 class="pv_item">Each site's PV</h3>
+        <% @each_site.each do |site, count| %>
+         <ul>
+         <li><a href="<%= site %> " target="_blank"><%= site %></a> => <span class="each_pvs"><%= count %>PV</span><br></li>
+         </ul>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+   
+    <div class="pv1">
+    <h3 class="pv_item">Access log</h3>
+       <ul>
+       <% @site.group_by(&:site_url).each do |url, rest| %>
+       <li>
+       <a class="each_url" href="<%= url %> " target="_blank"><%= url %></a>: <br><span class="history"><%= "#{rest.map{|x| x[:created_at].in_time_zone('Tokyo').strftime('%Y/%m/%d %H:%M')}.join(', ')}" %></span><br>
+      </li>
+       <% end %>
+     </ul>
+   </div>
+  </div>
+</div>
+
+
+
+
