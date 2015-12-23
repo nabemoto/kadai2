@@ -52,3 +52,4 @@ production:
   database: kadai2_production
   username: kadai2
   password: <%= ENV['KADAI2_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
