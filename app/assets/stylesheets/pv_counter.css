@@ -43,7 +43,7 @@ body {
   position: relative;
   top: 10px;
   left: 20px;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .each_url{
@@ -59,4 +59,7 @@ li{
   margin: 15px auto;
 }
 
+.table{
+  margin: 30px auto;
+}
 

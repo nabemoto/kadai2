@@ -33,6 +33,7 @@ gem 'less-rails' #Railsでlessを使えるようにする。Bootstrapがlessで�
 gem 'twitter-bootstrap-rails'
 gem "chartkick"
 gem 'groupdate'
+gem 'lazy_high_charts'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
